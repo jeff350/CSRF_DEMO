@@ -1,6 +1,8 @@
-# CSRF_DEMO #
-## Summary##
-This is a Flask web application That I have developed for educational purposese to demonstrate CSRF Vulnerabilities. This code is not designed to be secure and shoul not be reused.
+This is the reimplementation of Snowflakes Web Application  That will
+potentially be Jeff Neel's Creative Component. This site will allow for the
+following functions
 
-## Description ##
-This is a simple application that simulates a Bank. users are able to signup for an account where they instantly have $500. There is functionallity that allows a suer to send money to another user. The transaction page will accept values in a GET request which is one way an attacker could trick a user into sending money to their own account.
+- Automatically create Flow configs and loads them into the NFS share so that boards will use the new config on ext boot.
+- Show the status of all boards and IP ranges on each board.
+- Visualization section that will display a graph of the entire network.
+- allow integration of ISERink internments into federation.

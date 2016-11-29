@@ -1,0 +1,29 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}{{Title}}{% endblock %}
+
+{% import "bootstrap/fixes.html" as fixes %}
+{% block head %}
+{{super()}}
+{{fixes.ie8()}}
+{% endblock %}
+
+{% block styles -%}
+    {{super()}}
+    <link rel="stylesheet" type="text/css"
+          href="{{url_for('static', filename='custom.css')}}">
+{% endblock %}
+
+{% block navbar %}
+    {{nav.frontend_top.render()}}
+{% endblock %}
+
+{% block body %}
+{{super()}}
+<footer class="footer">
+    <br>    <br>
+    <p>&copy; Jlneel 2016 </p>
+    <p>Created By: Jeff Neel</p>
+    <p>jlneel@iastate.edu </p>
+</footer>
+{% endblock body %}

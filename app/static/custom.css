@@ -1,0 +1,26 @@
+.jumbotron {
+  margin: 1em;  // add a little space
+
+}
+.footer {
+  margin: 2em;
+  font-size: 14px;
+  color: white;
+}
+
+form {
+  font-size: 18px;
+}
+
+errors {
+  font-size: 12px;
+}
+
+body {
+  background-color: #2c7aaa;
+}
+
+h1.jumbotron-heading {
+  color: #2c7aaa;
+  font-size: 32px;
+}
