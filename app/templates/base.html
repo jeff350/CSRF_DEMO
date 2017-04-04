@@ -1,29 +1,65 @@
-{% extends "bootstrap/base.html" %}
-
-{% block title %}{{Title}}{% endblock %}
-
-{% import "bootstrap/fixes.html" as fixes %}
-{% block head %}
-{{super()}}
-{{fixes.ie8()}}
-{% endblock %}
-
-{% block styles -%}
-    {{super()}}
-    <link rel="stylesheet" type="text/css"
-          href="{{url_for('static', filename='custom.css')}}">
-{% endblock %}
-
-{% block navbar %}
-    {{nav.frontend_top.render()}}
-{% endblock %}
-
-{% block body %}
-{{super()}}
-<footer class="footer">
-    <br>    <br>
-    <p>&copy; Jlneel 2016 </p>
-    <p>Created By: Jeff Neel</p>
-    <p>jlneel@iastate.edu </p>
-</footer>
-{% endblock body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- ^^ Must come first!!! -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/favicon.ico">
+    <title> {% block title %} {{ Title }} {% endblock %} </title>
+    {#<-- Bootstrap core CSS -->#}
+</head>
+<style> body {
+    padding-bottom: 2rem;
+}     </style>
+<body>
+<nav class="navbar navbar-toggleable-md navbar-primary bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="User_Home">User Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="transfer">Transfer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="users">Users</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Create_account">Create Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="logout">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br> {% block content %}{% endblock %}
+<hr>
+<div style="text-align: center;">
+    <footer><p>&copy; Jeff Neel 2016</p></footer>
+</div>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+      integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+</body>
+</html>

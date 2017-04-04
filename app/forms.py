@@ -15,24 +15,26 @@ class LoginForm(FlaskForm):
 
 
 class TransferForm(FlaskForm):
-  transfer_to = StringField('Enter the email address of the user you would '
-                            'like to transfer funds to: ')
-  Ammount = IntegerField('Transfer Amount:')
-  submit = SubmitField("Submit")
+    transfer_to = StringField('Enter the email address of the user you would '
+                              'like to transfer funds to: ',
+                              [validators.DataRequired('Enter the username of the user to transfer money to')])
+    Ammount = IntegerField('Transfer Amount:',
+                           [validators.NumberRange(min=0), validators.DataRequired('Enter the amount to transfer')])
+    submit = SubmitField("Submit")
 
 
 class CreateAccountForm(FlaskForm):
     firstname = StringField('First Name:', [validators.DataRequired('enter your '
-                                                                    'First Name'), ],)
+                                                                    'First Name'), ], )
     lastname = StringField('Last Name:', [validators.DataRequired('enter your '
-                                                              'Last Name'), ],)
+                                                                  'Last Name'), ], )
     email = StringField('Email:', [validators.email('Please enter a valid '
                                                     'Email '
                                                     'address'),
                                    validators.DataRequired('enter your '
-                                                           'Email'), ],)
+                                                           'Email'), ], )
     password = PasswordField('Password:', [validators.DataRequired('enter your '
-                                                                 'Password'), ],)
+                                                                   'Password'), ], )
     submit = SubmitField("Submit")
 
     def __init__(self, *args, **kwargs):

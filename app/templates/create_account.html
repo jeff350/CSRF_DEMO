@@ -3,17 +3,17 @@
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block content %}
-<section class="jumbotron text-xs-center">
-    <div class="container">
-        <h1 class="jumbotron-heading">CC Bank</h1>
-        <p class="lead text-muted">
-           Here at CC Banking we are currently giving a $500 signup bonus for
-            all new accounts. all you need to do to sign up is create a new
-            account below
-            <br><br>
-            {{wtf.quick_form(form)}}
-    </div>
+    <section class="jumbotron text-xs-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">CC Bank</h1>
+            <p class="lead text-muted">
+                Here at CC Banking we are currently giving a $500 signup bonus for
+                all new accounts. all you need to do to sign up is create a new
+                account below
+                <br><br>
+                {{ wtf.quick_form(form) }}
+        </div>
 
-</section>
+    </section>
 
-{% endblock content%}
+{% endblock content %}

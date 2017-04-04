@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<section class="jumbotron text-xs-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Users</h1>
+        <p class="lead text-muted">
+            {% for user in users %}
+                <p> {{ user.email }} {{ user.ballance }}</p>
+            {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock content%}
