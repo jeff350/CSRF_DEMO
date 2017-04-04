@@ -1,6 +1,4 @@
 from flask import render_template, redirect, url_for, request
-from flask_nav import Nav
-from app.nav import nav, nav_authenticated
 from flask_nav.elements import Navbar, View, Subgroup, Link, Text, Separator
 from flask_login import login_required, login_user, logout_user, current_user
 from app.forms import LoginForm, CreateAccountForm, TransferForm
@@ -10,19 +8,16 @@ from app import login_manager
 from app import app
 import logging
 
-nav.register_element('frontend_top', Navbar(
-    # TODO: CLEAN UP NAV BAR
-    View('CC_Bank', '.index'),
-    View('Create Account', '.Create_account'),
-    View('User summary', '.User_Home'),
-    View('transfer', '.transfer'),
-    View('login', '.login'),
-    View('logout', '.logout'), ))
+
+@app.route('/users')
+def index():
+    users = User.query.all()
+    return render_template('users.html', Title='CC Bank', users=users)
 
 
 @app.route('/')
 @app.route('/index')
-def index():
+def users():
     return render_template('index.html', Title='CC Bank')
 
 
@@ -44,12 +39,6 @@ def login():
                 login_user(user, remember=True)
                 return redirect(url_for("User_Home"))
     return render_template("login.html", form=form, user=current_user)
-
-
-@app.route('/users', methods=['GET'])
-def users():
-    users = User.query.all()
-    return render_template("users.html", users=users)
 
 
 @app.route("/logout", methods=["GET"])
